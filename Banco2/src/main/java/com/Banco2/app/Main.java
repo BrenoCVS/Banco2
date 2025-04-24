@@ -8,6 +8,9 @@ import com.Banco2.VIEW.ClienteVIEW;
 import com.Banco2.VIEW.ContaVIEW;
 import com.Banco2.VIEW.PoupancaVIEW;
 import com.Banco2.VIEW.CorrenteVIEW;
+import com.Banco2.VIEW.PrincipalVIEW;
+import com.Banco2.DTO.ClienteDTO;
+import com.Banco2.DTO.ContaDTO;
 
 public class Main {
     public static void main(String[] args){
@@ -15,12 +18,15 @@ public class Main {
         ContaVIEW contaVIEW = new ContaVIEW();
         PoupancaVIEW poupancaVIEW = new PoupancaVIEW();
         CorrenteVIEW correnteVIEW = new CorrenteVIEW();
+        PrincipalVIEW principalVIEw = new PrincipalVIEW();
+        ContaDTO contaDTO = new ContaDTO();
+        ClienteDTO clienteDTO = new ClienteDTO();
 
-        clienteVIEW.nome_cliente();
+        clienteVIEW.nome_cliente(clienteDTO);
         contaVIEW.nome_banco();
         correnteVIEW.valor_cc();
         poupancaVIEW.valor_pp();
-        correnteVIEW.desconto();
+        principalVIEw.menu(clienteDTO, contaDTO);
         
     }
     

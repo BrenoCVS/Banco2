@@ -5,11 +5,26 @@
 package com.Banco2.DTO;
 
 public class PoupancaDTO extends ContaDTO {
-    private double valor_pp;
-    private double retirada;
+    private double valor_pp, retirada, deposito, saque;
 
     public double getRetirada() {
         return retirada;
+    }
+
+    public double getDeposito() {
+        return deposito;
+    }
+
+    public void setDeposito(double deposito) {
+        this.deposito = deposito;
+    }
+
+    public double getSaque() {
+        return saque;
+    }
+
+    public void setSaque(double saque) {
+        this.saque = saque;
     }
 
     public void setRetirada(double retirada) {

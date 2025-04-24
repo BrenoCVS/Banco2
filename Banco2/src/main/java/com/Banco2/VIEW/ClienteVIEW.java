@@ -6,12 +6,17 @@ package com.Banco2.VIEW;
 
 import javax.swing.JOptionPane;
 import com.Banco2.DTO.ClienteDTO;
+import com.Banco2.DTO.CorrenteDTO;
+import com.Banco2.DTO.PoupancaDTO;
 
 public class ClienteVIEW {
 
-    ClienteDTO clienteDTO = new ClienteDTO();
-
-    public void nome_cliente(){
+    public void nome_cliente(ClienteDTO clienteDTO){
         clienteDTO.setNome_cliente(JOptionPane.showInputDialog("Qual o nome do cliente: "));
+    }
+    
+    public void saldo(CorrenteDTO correnteDTO, PoupancaDTO poupancaDTO){
+        JOptionPane.showMessageDialog(null, "Saldo da Conta Corrente: R$" + correnteDTO.getValor_cc() + ""
+        + "\nSaldo da Poupança: R$" + poupancaDTO.getValor_pp());
     }
 }
