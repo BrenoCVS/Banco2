@@ -15,13 +15,11 @@ import com.Banco2.DTO.CorrenteDTO;
 
 public class PrincipalVIEW {
         
-    public static void menu(ClienteDTO clienteDTO, ContaDTO contaDTO) {
+    public static void menu(ClienteDTO clienteDTO, ContaDTO contaDTO, CorrenteDTO correnteDTO, PoupancaDTO poupancaDTO) {
 
         PoupancaVIEW poupancaVIEW = new PoupancaVIEW();
         CorrenteVIEW correnteVIEW = new CorrenteVIEW();
         ClienteVIEW clienteVIEW = new ClienteVIEW();
-        PoupancaDTO poupancaDTO = new PoupancaDTO();
-        CorrenteDTO correnteDTO = new CorrenteDTO();
 
         int opcao = 1;
        

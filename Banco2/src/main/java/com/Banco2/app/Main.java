@@ -12,6 +12,9 @@ import com.Banco2.VIEW.PrincipalVIEW;
 import com.Banco2.DTO.ClienteDTO;
 import com.Banco2.DTO.ContaDTO;
 
+import com.Banco2.DTO.CorrenteDTO;
+import com.Banco2.DTO.PoupancaDTO;
+
 public class Main {
     public static void main(String[] args){
         ClienteVIEW clienteVIEW = new ClienteVIEW();
@@ -21,12 +24,15 @@ public class Main {
         PrincipalVIEW principalVIEw = new PrincipalVIEW();
         ContaDTO contaDTO = new ContaDTO();
         ClienteDTO clienteDTO = new ClienteDTO();
+        
+        CorrenteDTO correnteDTO = new CorrenteDTO();
+        PoupancaDTO poupancaDTO = new PoupancaDTO();
 
         clienteVIEW.nome_cliente(clienteDTO);
         contaVIEW.nome_banco();
-        correnteVIEW.valor_cc();
-        poupancaVIEW.valor_pp();
-        principalVIEw.menu(clienteDTO, contaDTO);
+        correnteVIEW.valor_cc(correnteDTO);
+        poupancaVIEW.valor_pp(poupancaDTO);
+        principalVIEw.menu(clienteDTO, contaDTO, correnteDTO, poupancaDTO);
         
     }
     

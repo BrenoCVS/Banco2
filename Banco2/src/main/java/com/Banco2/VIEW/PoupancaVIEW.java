@@ -9,6 +9,7 @@ import com.Banco2.CTR.PoupancaCTR;
 import com.Banco2.VIEW.PrincipalVIEW;
 import com.Banco2.DTO.ContaDTO;
 import com.Banco2.DTO.ClienteDTO;
+import com.Banco2.DTO.CorrenteDTO;
 
 public class PoupancaVIEW extends ContaVIEW{
     PoupancaCTR poupancaCTR = new PoupancaCTR();
@@ -16,8 +17,9 @@ public class PoupancaVIEW extends ContaVIEW{
     PrincipalVIEW principalVIEW = new PrincipalVIEW();
     ContaDTO contaDTO = new ContaDTO();
     ClienteDTO clienteDTO = new ClienteDTO();
-
-    public void valor_pp (){
+    CorrenteDTO correnteDTO = new CorrenteDTO();
+    
+    public void valor_pp (PoupancaDTO poupancaDTO){
         poupancaDTO.setValor_pp(Double.parseDouble(JOptionPane.showInputDialog("Informe o valor da poupança: ")));
     }
     
@@ -33,7 +35,7 @@ public class PoupancaVIEW extends ContaVIEW{
             JOptionPane.showMessageDialog(null, poupancaCTR.deposito());
         }
         
-        principalVIEW.menu(clienteDTO, contaDTO);
+        principalVIEW.menu(clienteDTO, contaDTO, correnteDTO, poupancaDTO);
    
     }
     
@@ -48,6 +50,6 @@ public class PoupancaVIEW extends ContaVIEW{
             JOptionPane.showMessageDialog(null, poupancaCTR.saque());
         }
         
-        principalVIEW.menu(clienteDTO, contaDTO);
+        principalVIEW.menu(clienteDTO, contaDTO, correnteDTO, poupancaDTO);
     }
 }

@@ -9,6 +9,7 @@ import com.Banco2.CTR.CorrenteCTR;
 import javax.swing.JOptionPane;
 import com.Banco2.DTO.ClienteDTO;
 import com.Banco2.VIEW.PrincipalVIEW;
+import com.Banco2.DTO.PoupancaDTO;
 
 public class CorrenteVIEW extends ContaVIEW{
 
@@ -16,10 +17,11 @@ public class CorrenteVIEW extends ContaVIEW{
     CorrenteCTR correnteCTR =  new CorrenteCTR();
     ClienteDTO clienteDTO = new ClienteDTO();
     PrincipalVIEW principalVIEW = new PrincipalVIEW();
+    PoupancaDTO poupancaDTO = new PoupancaDTO();
 
-    public void valor_cc (){
+    public void valor_cc (CorrenteDTO correnteDTO){
         correnteDTO.setValor_cc(Double.parseDouble(JOptionPane.showInputDialog("Informe o valor da conta corrente: ")));
-    
+        System.out.println(correnteDTO.getValor_cc());
     }
     
     public void deposito(){
@@ -33,7 +35,7 @@ public class CorrenteVIEW extends ContaVIEW{
             JOptionPane.showMessageDialog(null, correnteCTR.deposito());
         }
         
-        principalVIEW.menu(clienteDTO, contaDTO);
+        principalVIEW.menu(clienteDTO, contaDTO, correnteDTO, poupancaDTO);
     }
     
     public void sacar(){
@@ -46,5 +48,8 @@ public class CorrenteVIEW extends ContaVIEW{
             correnteDTO.setDeposito(Double.parseDouble(input));
             JOptionPane.showMessageDialog(null, correnteCTR.saque());
         }
+        
+        principalVIEW.menu(clienteDTO, contaDTO, correnteDTO, poupancaDTO);
+
     }
 }
